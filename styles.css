@@ -11,7 +11,7 @@ body {
   padding: 0;
   font-family: Arial, sans-serif;
   background-color: #f0f0f0;
-  background: url(/web1/image/ts/backgroud.png) no-repeat;
+  background: url(/web1/image/ts/nen.png) no-repeat;
   background-attachment: fixed;
   background-size:  100%;
 
@@ -30,6 +30,7 @@ body {
   justify-content: space-between;
   padding: 10px;
   margin: 0px calc(15% - 20px);
+  margin-bottom: 20px;
 }
 
 .menu-item {
@@ -44,8 +45,6 @@ body {
   border-radius: 20px;
   backdrop-filter: (blur(5px));
   
-
-
 }
 @media (max-width: 768px) {
   .menu-item {
@@ -94,4 +93,10 @@ h1{
 }
 h2{
   margin-top: 40px
+}
+.footer {
+  background-color: #333; /* Màu nền cho footer */
+  color: #fff; /* Màu chữ cho footer */
+  padding: 10px 0; /* Khoảng cách bên trên và dưới của footer */
+  margin-top: 30px;
 }
