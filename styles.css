@@ -11,7 +11,7 @@ body {
   padding: 0;
   font-family: Arial, sans-serif;
   background-color: #f0f0f0;
-  background: url(/web1/image/ts/nen.png) no-repeat;
+  background: url(./image/ts/nen.png) no-repeat;
   background-attachment: fixed;
   background-size:  100%;
 
