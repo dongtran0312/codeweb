@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nhà hàng Đông Trần</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.0/xlsx.full.min.js"></script>
+
+</head>
+
+<body>
+    <div class="p-3 bg-dark text-white text-center">
+        <h1>Restaurant Order</h1>
+        <nav>
+            <ul class="nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link" href="menu.html">Menu</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="menuDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                       Contact
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="menuDropdown">
+                        <li><a class="dropdown-item" href="#Appetizers">Số điện thoại: 090909090</a></li>
+                        <li><a class="dropdown-item" href="#Appetizers">Email: dt.restaurant@gmail.com</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+
+
+    <main class="container mt-3">
+        <div class="row">
+            <!-- Ví dụ cho Bàn 1 -->
+            <!-- Lặp lại cho mỗi bàn từ 1 đến 10 -->
+            <!-- Ví dụ cho bàn 1 -->
+            <div class="col-md-4 col-lg-4 mb-4">
+                <div class="card" id="tableCard1">
+                    <div class="card-body">
+                        <h5 class="card-title">Bàn 1</h5>
+                        <button type="button" class="btn btn-primary" onclick="checkIn(1)">Check In</button>
+                        <button type="button" class="btn btn-secondary" onclick="checkOut(1)">Check Out</button>
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#orderModal1" onclick="resetOrderModal(1)" style="display: none;" id="orderButton1">Order</button>
+                        <div id="tableStatus" class="table-status container mt-4">
+                         
+                            <!-- Trạng thái các bàn sẽ được thêm vào đây -->
+                        </div>
+                        <!-- Modal cho Bàn 1 -->
+                        <!-- Modal và các nút khác -->
+                        <div class="modal-fade" id ='historyBody1'>
+                            <div class="modal-header">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="orderHistory">History - Bàn 1</h5>
+                                    </div>
+    
+                            </div>
+                        </div>
+                        <div class="modal fade" id="orderModal1" tabindex="-1" aria-labelledby="orderModalLabel1" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="orderModalLabel1">Chọn Món - Bàn 1</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <!-- Khai vị -->
+                                        <h6>Khai vị</h6>
+                                        <div class="d-flex align-items-center mb-2">
+                                            <span class="me-2" id="table1appetizer1Name">Bánh mì nướng</span>
+                                            <span class="me-2" id="table1appetizer1Price">20,000 VND</span>
+                                            <button class="btn btn-secondary btn-sm" onclick="decrement('table1appetizer1Qty')">-</button>
+                                            <input type="text" id="table1appetizer1Qty" value="0" class="form-control mx-1" style="width: 50px;">
+                                            <button class="btn btn-primary btn-sm" onclick="increment('table1appetizer1Qty')">+</button>
+                                        </div>
+                                        <div class="d-flex align-items-center mb-2">
+                                            <span class="me-2" id="table1appetizer2Name">Bò nướng</span>
+                                            <span class="me-2" id="table1appetizer2Price">50,000 VND</span>
+                                            <button class="btn btn-secondary btn-sm" onclick="decrement('table1appetizer2Qty')">-</button>
+                                            <input type="text" id="table1appetizer2Qty" value="0" class="form-control mx-1" style="width: 50px;">
+                                            <button class="btn btn-primary btn-sm" onclick="increment('table1appetizer2Qty')">+</button>
+                                        </div>
+                                        <!-- Các món khác... -->
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                                        <button type="button" class="btn btn-primary" onclick="confirmOrder(1)">Xác nhận đơn hàng</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+     
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
